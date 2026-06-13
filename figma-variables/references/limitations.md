@@ -90,7 +90,7 @@
 - Перевір нативний пошук (міг з'явитись)
 - Плагін "Find Variables", "Color Variable Matcher"
 
-**Export для devів:**
+**Export для девів:**
 - Плагін "Tokens Brücke" — W3C DTCG JSON + прямий push до GitHub
 - Плагін "Token Exporter" — W3C + CSS custom properties
 - Figma REST API Variables endpoint — для кастомних скриптів
