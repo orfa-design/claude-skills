@@ -39,7 +39,7 @@
 Ключові поля:
 - `$value` — значення або alias у `{dot.notation}`
 - `$type` — `color`, `dimension`, `fontFamily`, `fontWeight`, `fontSize`, `lineHeight`, `letterSpacing`, `duration`, `cubicBezier`
-- `$description` — документація токену (критично важливо для devів)
+- `$description` — документація токену (критично важливо для девів)
 
 ---
 
@@ -64,11 +64,7 @@
 ## Figma REST API
 <!-- verified: 2026-06-13 | source: developers.figma.com/docs/rest-api/changelog/ -->
 <!-- ⚠️ re-verify: rate limits змінились листопад 2025 -->
-
-```
 GET /v1/files/{file_key}/variables/local
-```
-
 Повертає всі local variables: values per mode, alias references, scoping, extended collections.
 
 Корисно для:
@@ -103,36 +99,46 @@ variable.valuesByMode  // { modeId: value }
 
 ## Рекомендований GitHub pipeline для BV360
 <!-- verified: 2026-06-13 | source: dev.to + figma community best practices -->
+Дизайнер оновлює Variables у Figma
 
-```
-1. Дизайнер оновлює Variables у Figma
-        ↓
-2. Tokens Brücke плагін → Push to GitHub PR
-        ↓
-3. Dev reviewer переглядає diff → merge
-        ↓
-4. GitHub Action → Style Dictionary
-        ↓
-5. CSS / JS / інші output formats готові
-```
+↓
+Tokens Brücke плагін → Push to GitHub PR
+
+↓
+Dev reviewer переглядає diff → merge
+
+↓
+GitHub Action → Style Dictionary
+
+↓
+CSS / JS / інші output formats готові
 
 ### Структура файлів на GitHub
-
-```
 tokens/
+
 ├── primitives/
+
 │   ├── colors.tokens.json
+
 │   ├── spacing.tokens.json
+
 │   └── typography.tokens.json
+
 ├── semantic/
+
 │   ├── light.tokens.json
+
 │   └── dark.tokens.json
+
 ├── brands/
+
 │   ├── brand-01.tokens.json
+
 │   ├── brand-02.tokens.json
+
 │   └── ...
+
 └── README.md
-```
 
 ---
 
@@ -142,7 +148,6 @@ tokens/
 Трансформує W3C DTCG JSON у будь-який output:
 
 ```css
-/* input: tokens.json */
 /* output: tokens.css */
 :root {
   --color-action-primary: #3B82F6;
@@ -174,7 +179,7 @@ export const colorActionPrimary = '#3B82F6';
 
 ---
 
-## Що документувати для devів у кожному токені
+## Що документувати для девів у кожному токені
 
 Обов'язково:
 - Назва (відповідає CSS custom property)
@@ -186,3 +191,4 @@ export const colorActionPrimary = '#3B82F6';
 - `deprecated: true` якщо токен виводиться з використання
 - `replacedBy` — якщо є заміна
 - Usage examples — де саме у компонентах використовується
+
